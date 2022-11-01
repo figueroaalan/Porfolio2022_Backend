@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins= {"*"}, maxAge = 4800, allowCredentials = "false" )
 @RestController
 @RequestMapping("/api/educacion")
 public class EducacionResource {
@@ -21,6 +22,7 @@ public class EducacionResource {
 
     @PostMapping("/crear")
     public ResponseEntity<Map<String, String>> crearEducacion(@RequestBody Map<String, Object> educacionMap) {
+
         String titulo = (String) educacionMap.get("titulo");
         String descripcion = (String) educacionMap.get("descripcion");
         String fecha = (String) educacionMap.get("fecha");

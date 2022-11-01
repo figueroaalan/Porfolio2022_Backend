@@ -13,11 +13,11 @@ import java.util.List;
 
 @Repository
 public class EducacionRepository {
-    private static final String SQL_CREAR = "INSERT INTO portfolio.educacion(titulo, descripcion,fecha_inicio) values(?,?,?)";
-    private static final String SQL_ENCONTRAR_POR_ID = "SELECT * FROM portfolio.educacion WHERE ID = ?";
-    private static final String SQL_ACTUALIZAR_EDUCACION = "UPDATE portfolio.educacion SET titulo = ?, descripcion = ?, fecha_inicio = ? where id = ?";;
-    private static final String SQL_INACTIVAR_EDUCACION = "UPDATE portfolio.educacion SET activo = 0 where id = ?";;
-    private static final String SQL_TODAS_ACTIVAS = "SELECT * FROM portfolio.educacion WHERE activo = 1";
+    private static final String SQL_CREAR = "INSERT INTO b9ospx2mjitpbclrryhg.educacion(titulo, descripcion,fecha_inicio) values(?,?,?)";
+    private static final String SQL_ENCONTRAR_POR_ID = "SELECT * FROM b9ospx2mjitpbclrryhg.educacion WHERE ID = ?";
+    private static final String SQL_ACTUALIZAR_EDUCACION = "UPDATE b9ospx2mjitpbclrryhg.educacion SET titulo = ?, descripcion = ?, fecha_inicio = ? where id = ?";;
+    private static final String SQL_INACTIVAR_EDUCACION = "UPDATE b9ospx2mjitpbclrryhg.educacion SET activo = 0 where id = ?";;
+    private static final String SQL_TODAS_ACTIVAS = "SELECT * FROM b9ospx2mjitpbclrryhg.educacion WHERE activo = 1";
 
 
     @Autowired
@@ -52,7 +52,9 @@ public class EducacionRepository {
     }
 
     private final RowMapper<Educacion> educacionRowMapper = ((rs, rowNUm) ->
-            new Educacion (rs.getString("titulo"),
+            new Educacion (
+                    rs.getInt("id"),
+                    rs.getString("titulo"),
                     rs.getString("descripcion"),
                     rs.getString("fecha_inicio")));
 }

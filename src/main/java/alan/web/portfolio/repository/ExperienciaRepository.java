@@ -12,11 +12,11 @@ import java.util.List;
 
 @Repository
 public class ExperienciaRepository {
-    private static final String SQL_CREAR = "INSERT INTO portfolio.experiencia(titulo, descripcion,fecha_inicio) values(?,?,?)";
-    private static final String SQL_ENCONTRAR_POR_ID = "SELECT * FROM portfolio.experiencia WHERE ID = ?";
-    private static final String SQL_TODAS_ACTIVAS = "SELECT * FROM portfolio.experiencia WHERE activo = 1";
-    private static final String SQL_ACTUALIZAR_EXPERIENCIA = "UPDATE portfolio.experiencia SET titulo = ?, descripcion = ?, fecha_inicio = ? where id = ?";
-    private static final String SQL_INACTIVAR_EXPERIENCIA = "UPDATE portfolio.experiencia SET activo = 0 where id = ?";
+    private static final String SQL_CREAR = "INSERT INTO b9ospx2mjitpbclrryhg.experiencia(titulo, descripcion,fecha_inicio) values(?,?,?)";
+    private static final String SQL_ENCONTRAR_POR_ID = "SELECT * FROM b9ospx2mjitpbclrryhg.experiencia WHERE ID = ?";
+    private static final String SQL_TODAS_ACTIVAS = "SELECT * FROM b9ospx2mjitpbclrryhg.experiencia WHERE activo = 1";
+    private static final String SQL_ACTUALIZAR_EXPERIENCIA = "UPDATE b9ospx2mjitpbclrryhg.experiencia SET titulo = ?, descripcion = ?, fecha_inicio = ? where id = ?";
+    private static final String SQL_INACTIVAR_EXPERIENCIA = "UPDATE b9ospx2mjitpbclrryhg.experiencia SET activo = 0 where id = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -47,7 +47,9 @@ public class ExperienciaRepository {
     }
 
     private final RowMapper<Experiencia> experienciaRowMapper = ((rs, rowNUm) ->
-            new Experiencia (rs.getString("titulo"),
+            new Experiencia (
+                    rs.getInt("id"),
+                    rs.getString("titulo"),
                     rs.getString("descripcion"),
                     rs.getString("fecha_inicio")));
 

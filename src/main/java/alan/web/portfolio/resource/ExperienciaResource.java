@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins= {"*"}, maxAge = 4800, allowCredentials = "false" )
 @RestController
 @RequestMapping("/api/experiencia")
 public class ExperienciaResource {
@@ -21,12 +22,14 @@ public class ExperienciaResource {
     ExperienciaService experienciaService;
 
     @PostMapping("/crear")
-    public ResponseEntity<Map<String, String>> crearExperiencia(@RequestBody Map<String, Object> experienciaMap) {
+    public ResponseEntity<Map<String, Boolean>> crearExperiencia(@RequestBody Map<String, Object> experienciaMap) {
         String titulo = (String) experienciaMap.get("titulo");
         String descripcion = (String) experienciaMap.get("descripcion");
-        String fecha = (String) experienciaMap.get("fecha");
+        String fecha = (String) experienciaMap.get("fecha_inicio");
         experienciaService.crearExperiencia(titulo, descripcion, fecha);
-        return new ResponseEntity("PIOLA PA",HttpStatus.OK);
+        Map<String, Boolean> map = new HashMap<>();
+        map.put("success", true);
+        return new ResponseEntity(map, HttpStatus.OK);
     }
 
     @GetMapping("")

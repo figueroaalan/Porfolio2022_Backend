@@ -12,8 +12,8 @@ import java.sql.PreparedStatement;
 
 @Repository
 public class UsuarioRepository {
-    private static final String SQL_CREAR_USUARIO = "INSERT INTO portfolio.usuarios(nombre, apellido, email, password) VALUES(?, ?, ?, ?)";
-    private static final String SQL_ENCONTRAR_EMAIL = "SELECT * FROM portfolio.usuarios WHERE EMAIL = ?";
+    private static final String SQL_CREAR_USUARIO = "INSERT INTO b9ospx2mjitpbclrryhg.usuarios(nombre, apellido, email, password) VALUES(?, ?, ?, ?)";
+    private static final String SQL_ENCONTRAR_EMAIL = "SELECT * FROM b9ospx2mjitpbclrryhg.usuarios WHERE EMAIL = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
