@@ -10,6 +10,7 @@ public class Usuario {
     @Getter @Setter private String email;
     @Getter @Setter private String password;
 
+
     public Usuario(Integer idUsuario, String nombre, String apellido, String email, String password) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
