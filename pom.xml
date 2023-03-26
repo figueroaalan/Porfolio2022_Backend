@@ -8,7 +8,7 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>app.api</groupId>
+	<groupId>alan.web</groupId>
 	<artifactId>portfolio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Portfolio</name>

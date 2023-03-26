@@ -1,0 +1,13 @@
+alan\web\portfolio\repository\ExperienciaRepository.class
+alan\web\portfolio\resource\ExperienciaResource.class
+alan\web\portfolio\resource\UsuarioResource.class
+alan\web\portfolio\service\ExperienciaService.class
+alan\web\portfolio\service\UsuarioService.class
+alan\web\portfolio\repository\EducacionRepository.class
+alan\web\portfolio\repository\UsuarioRepository.class
+alan\web\portfolio\PortfolioApplication.class
+alan\web\portfolio\domain\Usuario.class
+alan\web\portfolio\service\EducacionService.class
+alan\web\portfolio\domain\Educacion.class
+alan\web\portfolio\resource\EducacionResource.class
+alan\web\portfolio\domain\Experiencia.class
